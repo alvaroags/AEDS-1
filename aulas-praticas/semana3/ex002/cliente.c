@@ -20,7 +20,7 @@ char* getCPF(Cliente* cliente){
     return cliente->cpf;
 }
 char* getDtNascimento(Cliente* cliente){
-    return cliente->dtNascimento
+    return cliente->dtNascimento;
 }
 
 

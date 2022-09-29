@@ -12,10 +12,10 @@ typedef struct
     char estado[50];
 } Endereco;
 
-void setRua(Endereco* enredeco, char rua);
-void setBairro(Endereco* enredeco, char bairro);
-void setCidade(Endereco* enredeco, char cidade);
-void setEstado(Endereco* enredeco, char estado);
+void setRua(Endereco* enredeco, char* rua);
+void setBairro(Endereco* enredeco, char* bairro);
+void setCidade(Endereco* enredeco, char* cidade);
+void setEstado(Endereco* enredeco, char* estado);
 void setNumeroCasa(Endereco* enredeco, int numeroCasa);
 
 char* getRua(Endereco* endereco);

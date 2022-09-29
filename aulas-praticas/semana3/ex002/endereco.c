@@ -1,15 +1,15 @@
 #include "endereco.h"
 
-void setRua(Endereco* endereco, char rua){
+void setRua(Endereco* endereco, char* rua){
     strcpy(endereco->rua, rua);
 }
-void setBairro(Endereco* endereco, char bairro){
+void setBairro(Endereco* endereco, char* bairro){
     strcpy(endereco->bairro, bairro);
 }
-void setCidade(Endereco* endereco, char cidade){
+void setCidade(Endereco* endereco, char* cidade){
     strcpy(endereco->cidade, cidade);
 }
-void setEstado(Endereco* endereco, char estado){
+void setEstado(Endereco* endereco, char* estado){
     strcpy(endereco->estado, estado);
 }
 void setNumeroCasa(Endereco* endereco, int numeroCasa){
@@ -24,12 +24,12 @@ char* getBairro(Endereco* endereco){
     return endereco->bairro;
 }
 char* getCidade(Endereco* endereco){
-    return endereco->Cidade;
+    return endereco->cidade;
 }
 char* getEstado(Endereco* endereco){
-    return endereco->Estado;
+    return endereco->estado;
 }
-char* getNumeroCasa(Endereco* endereco){
+int getNumeroCasa(Endereco* endereco){
     return endereco->numero;
 }
 

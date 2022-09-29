@@ -39,10 +39,10 @@ void saque(contaBancaria* conta, double valor){
 // FUNÇÕES IMPRIMI
 void imprimiDadosConta(contaBancaria* conta){
     printf("\n-------------------------");
-    printf("\nNUMERO DA CONTA: %d", getNumero(conta);
-    printf("\nANO DA CONTA: %d", getAnoConta(conta);
-    printf("\nTIPO DA CONTA: %c", getTipoConta(conta);
-    printf("\nSALDO DA CONTA: %.2lf", getSaldo(conta);
+    printf("\nNUMERO DA CONTA: %d", getNumero(conta));
+    printf("\nANO DA CONTA: %d", getAnoConta(conta));
+    printf("\nTIPO DA CONTA: %c", getTipoConta(conta));
+    printf("\nSALDO DA CONTA: %.2lf", getSaldo(conta));
 
     imprimiDadosCliente(conta->cliente);
 }
