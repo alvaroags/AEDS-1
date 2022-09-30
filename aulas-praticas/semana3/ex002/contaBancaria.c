@@ -1,48 +1,52 @@
-#include "contaBancaria.h"
+#include "ContaBancaria.h"
 
-// FUNÇÕES SET
-void setNumero(contaBancaria* conta, int numero){
-    conta->numero = numero;
+void insereDadosConta(ContaBancaria *conta, int numeroConta, int anoConta, char *tipoConta, char *nome, char *cpf, char *dataNasc, char *rua, char *bairro, char *cidade, char *estado, int numeroCasa){
+    setNumeroConta(conta, numeroConta);
+    setAnoConta(conta, anoConta);
+    setTipoConta(conta, tipoConta);
+    setInicioSaldo(conta);
+
+    insereCliente(&conta->cliente, nome, cpf, dataNasc, rua, bairro, cidade, estado, numeroCasa);
 }
-void setAnoConta(contaBancaria* conta, int anoConta){
+
+void setNumeroConta(ContaBancaria *conta, int numeroConta){
+    conta->numeroConta = numeroConta;
+}
+void setAnoConta(ContaBancaria *conta, int anoConta){
     conta->anoConta = anoConta;
 }
-void setTipoConta(contaBancaria* conta, char tipoConta){
-    conta->tipoConta = tipoConta;
+void setTipoConta(ContaBancaria *conta, char *tipoConta){
+    strcpy(conta->tipoConta, tipoConta);
 }
-void setNovoSaldo(contaBancaria* conta){
+void setInicioSaldo(ContaBancaria *conta){
     conta->saldo = 0;
 }
 
-// FUNÇÕES GET
-int getNumero(contaBancaria* conta){
-    return conta->numero;
-}
-int getAnoConta(contaBancaria* conta){
-    return conta->anoConta;
-}
-char getTipoConta(contaBancaria* conta){
-    return conta->tipoConta;
-}
-double getSaldo(contaBancaria* conta){
-    return conta->saldo;
-}
-
-// OPERAÇÕES NO SALDO
-void deposito(contaBancaria* conta, double valor){
+void deposito(ContaBancaria *conta, double valor){
     conta->saldo += valor;
 }
-void saque(contaBancaria* conta, double valor){
+void saque(ContaBancaria *conta, double valor){
     conta->saldo -= valor;
 }
 
-// FUNÇÕES IMPRIMI
-void imprimiDadosConta(contaBancaria* conta){
-    printf("\n-------------------------");
-    printf("\nNUMERO DA CONTA: %d", getNumero(conta));
-    printf("\nANO DA CONTA: %d", getAnoConta(conta));
-    printf("\nTIPO DA CONTA: %c", getTipoConta(conta));
-    printf("\nSALDO DA CONTA: %.2lf", getSaldo(conta));
+int getNumeroConta(ContaBancaria *conta){
+    return conta->numeroConta;
+}
+int getAnoConta(ContaBancaria *conta){
+    return conta->anoConta;
+}
+char *getTipoConta(ContaBancaria *conta){
+    return conta->tipoConta;
+}
+double getSaldo(ContaBancaria *conta){
+    return conta->saldo;
+}
 
-    imprimiDadosCliente(conta->cliente);
+void imprimiConta(ContaBancaria *conta){
+    printf("\nNumero da Conta: %d", getNumeroConta(conta));
+    printf("\nAno da Conta: %d", getAnoConta(conta));
+    printf("\nTipo da Conta: %s", getTipoConta(conta));
+    printf("\nSaldo Disponivel: %.2lf", getSaldo(conta));
+
+    imprimiCliente(&conta->cliente);
 }
