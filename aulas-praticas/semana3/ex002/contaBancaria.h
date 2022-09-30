@@ -1,24 +1,27 @@
-#include "cliente.h"
+#include "Cliente.h"
+
 typedef struct 
 {
-    int numero;
-    double saldo;
-    char tipoConta;
+    int numeroConta;
     int anoConta;
-    Cliente *cliente;
-} contaBancaria;
+    char tipoConta[20];
+    double saldo;
+    Cliente cliente;
+}ContaBancaria;
 
-void setNumero(contaBancaria* conta, int numero);
-void setAnoConta(contaBancaria* conta, int anoConta);
-void setTipoConta(contaBancaria* conta, char tipoConta);
-void setNovoSaldo(contaBancaria*conta);
+void insereDadosConta(ContaBancaria *conta, int numeroConta, int anoConta, char *tipoConta, char *nome, char *cpf, char *dataNasc, char *rua, char *bairro, char *cidade, char *estado, int numeroCasa);
 
-int getNumero(contaBancaria* conta);
-int getAnoConta(contaBancaria* conta);
-char getTipoConta(contaBancaria* conta);
-double getSaldo(contaBancaria*conta);
+void setNumeroConta(ContaBancaria *conta, int numeroConta);
+void setAnoConta(ContaBancaria *conta, int anoConta);
+void setTipoConta(ContaBancaria *conta, char *tipoConta);
+void setInicioSaldo(ContaBancaria *conta);
 
-void deposito(contaBancaria*conta, double valor);
-void saque(contaBancaria*conta, double valor);
+void deposito(ContaBancaria *conta, double valor);
+void saque(ContaBancaria *conta, double valor);
 
-void imprimiDadosConta(contaBancaria* conta); 
+int getNumeroConta(ContaBancaria *conta);
+int getAnoConta(ContaBancaria *conta);
+char *getTipoConta(ContaBancaria *conta);
+double getSaldo(ContaBancaria *conta);
+
+void imprimiConta(ContaBancaria *conta);
