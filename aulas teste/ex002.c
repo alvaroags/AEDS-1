@@ -12,10 +12,10 @@ int main(){
     vet = malloc(tam * sizeof(int));
     if(vet){
         for(i=0;i<tam;i++){
-            *(vet + i) = rand() % 61;
+            (vet[i]) = rand() % 61;
         }
         for(i=0;i<tam;i++){
-            printf("%02d ", *(vet + i));
+            printf("%02d ", (vet[i]));
         }
     }
 }
